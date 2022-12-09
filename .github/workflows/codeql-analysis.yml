@@ -56,3 +56,6 @@ jobs:
 
     - name: Run flaky test with NonDex
       run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.datadog.jmxfetch.TestApp#testAppCanonicalRate
+      
+    - name: Other flaky test with NonDex
+      run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.datadog.jmxfetch.TestApp#testApp

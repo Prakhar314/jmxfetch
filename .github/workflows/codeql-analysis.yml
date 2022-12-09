@@ -50,3 +50,9 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+    
+    - name: Run flaky test
+      run: mvn -pl . test -Dtest=org.datadog.jmxfetch.TestApp#testAppCanonicalRate
+
+    - name: Run flaky test with NonDex
+      run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.datadog.jmxfetch.TestApp#testAppCanonicalRate

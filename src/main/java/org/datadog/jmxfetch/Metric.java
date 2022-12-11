@@ -1,5 +1,7 @@
 package org.datadog.jmxfetch;
 
+import java.util.Arrays;
+
 /**
  * Metric carrier class.
  */
@@ -19,6 +21,7 @@ public class Metric {
         this.metricType = metricType;
         this.tags = tags;
         this.checkName = checkName;
+        Arrays.sort(this.tags);
     }
 
     public String getAlias() {
